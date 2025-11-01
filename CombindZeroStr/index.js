@@ -3,5 +3,7 @@
 function CombindZeroStr(num) {
     if (isNaN(num))
         return "-";
+    if (!Number.isInteger(num) || num < 0)
+        return String(num);
     return String(num < 10 ? `0${num}` : num);
 }
