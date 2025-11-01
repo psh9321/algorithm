@@ -1,4 +1,5 @@
 "use strict";
+/** 배열 chunk 화  */
 function Chunk(arr, length) {
     const result = [];
     /** i 부터 (i + length) 까지 slice 해야 해서 i 는 1씩 더하는게 아니라 length 씩 더함 */

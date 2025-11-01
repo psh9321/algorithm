@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        ul { list-style: none; display: flex; gap: 10px; margin: 0 0 20px 0; padding: 0; }
+
+        section { display: block; width: 350px; height: 350px; overflow: hidden; }
+        div { display: block; width: 100%; height: 100%; background-color: #000; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><button data-type="FadeInOutAnimation">FadeInOutAnimation <span>Out</span></button></li>
+        <li><button data-type="FadeInOutScaleAnimation">FadeInOutScaleAnimation <span>Out</span></button></li>
+        <li><button data-type="FadeInSlideAnimation">FadeInSlideAnimation <span>Out</span></button></li>
+    </ul>
+    <section>
+        <div></div>
+    </section>
+    
+    <script src="./index.js"></script>
+    <script>
+        let is = false;
+
+        const element = document.querySelector("div");
+
+        const AnimFunctions = {
+            FadeInOutAnimation,
+            FadeInOutScaleAnimation,
+            FadeInSlideAnimation,
+        }
+
+        const btns = document.querySelectorAll("[data-type]");
+
+        const duration = 150;
+
+        btns.forEach(el => {
+            el.addEventListener("click", (e) => {
+                const self = e.currentTarget;
+
+                const { type } = self.dataset;
+                
+                is = !is;
+
+                btns.forEach(el => {
+                    if(is && el !== self) {
+                        el.style.visibility = "hidden";
+                    }
+                    else {
+                        if(el.style.display !== "visible") el.style.visibility = "visible";
+                    }
+                })
+                
+                self.querySelector("span").textContent = is ? "In" : "Out"
+
+                const fade = is ? "out" : "in";
+
+                function callback () { alert(`FadeInSlideAnimation ${fade} `) }
+
+                if(type === "FadeInSlideAnimation") {
+                    AnimFunctions[type](element, fade, duration, "right", callback);
+                }
+                else {
+                    AnimFunctions[type](element, fade, duration, callback);
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

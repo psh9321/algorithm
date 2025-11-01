@@ -1,6 +1,7 @@
 
 type PARAMS = number[];
 
+/** 배열 chunk 화  */
 function Chunk(arr : PARAMS, length : number) {
     const result = [] as PARAMS[];
 
