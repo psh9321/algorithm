@@ -1,6 +1,7 @@
+"use strict";
 const params = [1, 2, 3, 4, 5, 6, 7];
 /** 배열 랜덤 섞기 */
-function RandomShuffle(arr) {
+function ArrRandomShuffle(arr) {
     /** 파라미터로 넘겨 받은 배열까지 변경하지 않기 위해 복사 */
     const result = [...arr];
     for (let i = arr.length - 1; i > 0; i--) {
