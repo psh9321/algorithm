@@ -3,4 +3,4 @@
 
 
 ### ArrRandomShuffle 사용중 인 웹
- - https://react-project-tau-black.vercel.app/
+ - https://react-project-tau-black.vercel.app/ (mbti 문항 랜덤 출력)
