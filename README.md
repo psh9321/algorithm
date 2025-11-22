@@ -1,5 +1,5 @@
 # algorithm
-실무 에 쓰기 유용한 알고리즘
+실제 사용한 알고리즘
 
 
 ### ArrRandomShuffle 사용중 인 웹
